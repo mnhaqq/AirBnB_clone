@@ -48,7 +48,9 @@ class FileStorage:
                 dic = json.load(f)
 
             for key, value in dic.items():
-                obj = self.class_dict[value['__class__']](**value)
+                class_name = value['__class__']
+                class_type = self.class_dict[class_name]
+                obj = class_type(**value)
                 self.__objects[key] = obj
         except Exception:
             pass
