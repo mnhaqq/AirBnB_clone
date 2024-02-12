@@ -10,3 +10,4 @@ class City(BaseModel):
     Creates new city
     """
     name = ""
+    state_id = ""
