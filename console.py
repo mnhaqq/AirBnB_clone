@@ -15,6 +15,12 @@ class HBNBCommand(cmd.Cmd):
     """
     prompt = '(hbnb) '
 
+    def pre_cmd(self, line):
+        """Defines instructions to execute before <line> is interpreted.
+        """
+        if not line:
+            return '\n'
+
     def do_create(self, args):
         """Create new instance of BaseModel and saves it
         """
